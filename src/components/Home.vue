@@ -75,7 +75,7 @@
         return this.$store.getters.promoAds
       },
       ads () {
-        return this.$store.getters.myAds
+        return this.$store.getters.ads
       },
       loading () {
         return this.$store.getters.loading
