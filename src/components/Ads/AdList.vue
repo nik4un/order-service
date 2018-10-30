@@ -59,7 +59,7 @@
       },
       loading () {
         return this.$store.getters.loading
-      },
+      }
     }
   }
 </script>

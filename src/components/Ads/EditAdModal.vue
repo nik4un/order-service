@@ -1,12 +1,12 @@
 <template>
-  <v-dialog width="4000px" v-model="adEditor">
+  <v-dialog width="500" v-model="adEditor">
     <v-btn class="warning mr-3" flat slot="activator">Edit</v-btn>
     <v-card>
       <v-container>
         <v-layout row>
           <v-flex xs12>
             <v-card-title>
-              <h1 clas="text--primary">Edit ad</h1>
+              <h1 class="blue--text">Edit ad</h1>
             </v-card-title>
           </v-flex>
         </v-layout>
@@ -15,14 +15,14 @@
           <v-flex xs12>
             <v-card-text>
               <v-text-field
-                prepend-icon="person"
+                prepend-icon="edit"
                 name="title"
                 label="Title"
                 type="text"
                 v-model="editedTitle"
               ></v-text-field>
               <v-text-field
-                prepend-icon="person"
+                prepend-icon="edit"
                 name="description"
                 label="Description"
                 type="text"
@@ -38,7 +38,7 @@
             <v-card-actions>
               <v-spacer></v-spacer>
               <v-btn flat @click="doCancel">Cancel</v-btn>
-              <v-btn class="success" @click="doSave">Save</v-btn>
+              <v-btn flat class="success" @click="doSave">Save</v-btn>
             </v-card-actions>
           </v-flex>
         </v-layout>

@@ -3,10 +3,12 @@ import App from './App'
 import router from './router'
 import store from './store'
 import Vuetify from 'vuetify'
+import BuyModal from '@/components/Shared/BuyModal'
 import * as firebase from 'firebase'
 import 'vuetify/dist/vuetify.min.css'
 
 Vue.use(Vuetify)
+Vue.component('appBuyModal', BuyModal)
 
 Vue.config.productionTip = false  // Отрубаем сообщения
 
