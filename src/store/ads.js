@@ -67,18 +67,15 @@ export default {
         throw error
       }
     },
-    async fetchAds ({ commit }, payload) {
+    async fetchAds ({ commit }) {
       commit('clearError')
       commit('setLoading', true)
 
       try {
         const fbVal = await firebase.database().ref('ads').once('value')
         const ads = fbVal.val()
-        // console.log('From firebase:', ads)
         Object.keys(ads).forEach(key => {
-          // commit('createAd', ads[key])
           commit('createAd', { ...ads[key], id: key })
-          // console.log('Keys:', { ...ads[key], id: key })
         })
         commit('setLoading', false)
       } catch (error) {

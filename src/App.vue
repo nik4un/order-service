@@ -116,10 +116,10 @@
    },
    methods: {
      closeError () {
-       this.$store.dispatch('clearError')
+       this.$store.dispatch('clearError').then(() => {})
      },
      logoutUser () {
-       this.$store.dispatch('logoutUser')
+       this.$store.dispatch('logoutUser').then(() => {})
        this.$router.push('/')
      }
    }

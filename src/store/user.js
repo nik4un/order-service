@@ -34,7 +34,6 @@ export default {
       commit('setLoading', true)
       try {
         const { user } = await firebase.auth().signInWithEmailAndPassword(email, password)
-        // console.log('User:', user, user.uid)
         commit('setUser', new User(user.uid))
         commit('setLoading', false)
       } catch (error) {

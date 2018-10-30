@@ -69,7 +69,7 @@
             title: this.editedTitle,
             description: this.editedDescription,
             id: this.ad.id
-          })
+          }).then(() => {})
           this.adEditor = false
         }
       }

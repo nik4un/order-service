@@ -39,14 +39,10 @@ export default {
       try {
         const fbVal = await firebase.database().ref(`/users/${getters.user.id}/orders`).once('value')
         const orders = fbVal.val()
-        // console.log('fb orders:', orders)
+
         Object.keys(orders).forEach(key => {
           const order = orders[key]
-          // console.log('key: ', key)
-          // console.log('(order: ', order)
-          // console.log('userOrders until:', userOrders)
           userOrders.push(new Order(order.name, order.phone, order.adId, order.done, key))
-          // console.log('userOrders after:', userOrders)
         })
         commit('loadOrders', userOrders)
         commit('setLoading', false)
@@ -58,13 +54,9 @@ export default {
     },
     async markOrderDone ({ commit, getters }, payload) {
       commit('clearError')
-      // console.log('payload: ', payload)
-      // const orderDone = getters.orders.find(el => el.id === payload).done
-      // console.log('orderDone: ', orderDone)
       try {
         await firebase.database().ref(`/users/${getters.user.id}/orders`)
           .child(payload.id).update({ done: !payload.done })
-        // console.log('getters.orders:', getters.orders)
       } catch (error) {
         commit('setError', error.message)
         throw error

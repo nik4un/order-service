@@ -65,8 +65,6 @@
     },
     methods: {
       markDone (order) {
-        // console.log('markDone (order.done):', order.done)
-        // console.log('event:', event)
         this.$store.dispatch('markOrderDone', { id: order.id, done: order.done })
           .then(() => {
             order.done = !order.done
@@ -75,7 +73,7 @@
       }
     },
     created () {
-      this.$store.dispatch('fetchOrder')
+      this.$store.dispatch('fetchOrder').then(() => {})
     }
   }
 </script>
