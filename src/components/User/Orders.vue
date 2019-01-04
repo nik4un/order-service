@@ -35,7 +35,6 @@
 
             >
               <v-list-tile-title>{{ order.name }}</v-list-tile-title>
-              <v-list-tile-title>{{ order.id }}</v-list-tile-title>
               <v-list-tile-sub-title>{{ order.phone }}</v-list-tile-sub-title>
             </v-list-tile-content>
             <v-list-tile-action>
